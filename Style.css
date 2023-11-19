@@ -1,0 +1,377 @@
+
+#Header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: lightcyan;
+    box-shadow: 0 5px 15px rgb(0, 0, 0 ,0.06);
+}
+
+.logo {
+width: 150px; 
+height: auto;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m1{
+    margin: 40px 0;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    margin-right: 80px;
+}
+.navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    transition: 0.3s ease;
+}
+.navbar li a:hover{
+    color: red;
+}
+.navbar li a.active{
+color: blue;
+}
+.navbar li a.active::after{
+content: "";
+width: 30%;
+height: 2px;
+background-color: blue;
+position: absolute;
+bottom: -4px;
+left: 20px;
+}
+section{
+padding: 4rem 0 3rem;
+}
+.cart{
+position: fixed;
+top: 0;
+right: 0;
+width: 250px;
+min-height: 100vh;
+padding: 20px;
+background: #f9f9f9;
+box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+transition: 0.3s;
+}
+.cart.active{
+right: 0;
+}
+.cart-title{
+text-align: center;
+font-size: 1.5rem;
+font-weight: 600;
+margin-top: 2rem;
+}
+.cart-box{
+display: grid;
+grid-template-columns: 32% 50% 18%;
+align-items: center;
+gap: 1.5rem;
+margin-top: 2rem;
+}
+.cart-box img {
+max-width: 100px;
+max-height: 100px; 
+height: auto;
+margin-right: 20px;
+}
+.detail-box{
+display: grid;
+row-gap: 0.5rem;
+}
+.cart-product-title{
+font-size: 1.5rem;
+text-transform: uppercase;
+}
+.cart-price{
+font-weight: 500;
+}
+.cart-quantity{
+border: 1px solid black;
+outline-color: var(--main-color) ;
+width: 2.4rem;
+text-align: center;
+font-size: 1rem;
+}
+.cart-remove{
+font-size: 24px;
+color: red;
+cursor: pointer;
+}
+.total{
+display: flex;
+justify-content: flex-end;
+margin-top: 1.5rem;
+border-top: 1px solid turquoise;
+}
+.total-title{
+font-size: 1rem;
+font-weight: 600;
+}
+.total-price{
+margin-left: 0.5rem;
+}
+
+.section-title{
+font-size: 1.5rem;
+font-weight: 600;
+text-align: center;
+margin-bottom: 1.5rem;
+}
+.btn-buy{
+display: flex; 
+margin: 1.5rem auto 0 auto;
+padding: 12px 20px;
+border: none;
+background-color: red;
+color: white;
+font-size: 1rem;
+font-weight: 500;
+cursor: pointer;
+}
+.btn-buy:hover{
+background-color: blue;
+}
+#close-cart{
+position: absolute;
+top: 1rem;
+right: 0.5rem;
+}
+
+.product-container {
+display: flex; 
+flex-wrap: wrap; 
+justify-content: center; 
+}
+
+.shop-content-container {
+width: 100%;
+overflow-x: auto; 
+}
+.shop-content {
+white-space: wrap; 
+}
+
+.product-box {
+display: inline-block; 
+width: calc(25% - 10px); 
+text-align: center;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+margin: 5px; 
+}
+
+
+.product-box img {
+max-width: 100%; 
+height: auto; 
+max-height: 150px; 
+}
+
+
+.product-title {
+font-size: 20px;
+margin: 10px 0;
+}
+
+
+.price {
+font-size: 16px;
+color: #e74c3c;
+}
+
+
+.ri-shopping-bag-fill {
+font-size: 24px;
+color: #27ae60;
+margin-top: 10px;
+cursor: pointer;
+}
+
+#newsletter {
+background-color: #f1f1f1;
+padding: 20px 0;
+text-align: center;
+}
+
+.newstext {
+margin-bottom: 20px;
+}
+
+.newstext h4 {
+font-size: 24px;
+margin: 0;
+}
+
+.newstext p {
+font-size: 16px;
+margin: 0;
+color: #555;
+}
+
+.newstext p span {
+color: #f00; 
+}
+
+.form {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.form input[type="text"] {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+width: 60%; 
+max-width: 300px; 
+}
+
+.form button {
+padding: 10px 20px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.order-received-popup {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 20px;
+background-color: #fff;
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+z-index: 1000;
+}
+
+footer {
+background-color: #333;
+color: #fff;
+padding: 20px 0;
+text-align: center;
+}
+
+.col {
+display: inline-block;
+width: 25%;
+text-align: left;
+margin: 0 2%;
+vertical-align: top;
+}
+
+.col h4 {
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.col a {
+display: block;
+color: #fff;
+text-decoration: none;
+margin: 5px 0;
+}
+
+.col a:hover {
+text-decoration: underline;
+}
+
+.follow {
+margin-top: 20px;
+}
+
+.follow i {
+font-size: 20px;
+margin: 0 5px;
+}
+
+/* Copyright */
+.copyright {
+margin-top: 20px;
+font-size: 14px;
+}
+
+
+/* Add these styles to your existing Style.css file */
+
+/* Add overflow-y to the cart section */
+.cart {
+    overflow-y: auto;
+}
+
+/* Specify a max height for the cart to enable scrolling */
+.cart-content {
+    max-height: 70vh; /* Adjust the value as needed */
+    overflow-y: auto;
+}
+
+/* Adjust the width of individual cart boxes if necessary */
+.cart-box {
+    min-width: 200px; /* Adjust the value as needed */
+    /* Add any other styles for individual cart boxes */
+}
+
+/* Add any other styles specific to your cart section as needed */
+
+
+@media screen and (max-width: 768px) {
+#Header {
+    padding: 10px 20px;
+}
+
+.navbar li {
+    margin-right: 5px;
+}
+
+.cart {
+    width: 100%;
+    box-shadow: none;
+}
+
+.product-box {
+    width: calc(50% - 10px);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.product-box img {
+    max-height: 80px;
+}
+
+.product-title {
+    font-size: 16px;
+}
+
+.price {
+    font-size: 12px;
+}
+
+.form input[type="text"] {
+    width: 100%;
+    max-width: none;
+}
+
+.col {
+    width: 100%;
+    margin: 0;
+}
+}
+
+

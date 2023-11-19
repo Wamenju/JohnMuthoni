@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css" class="css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+    <section id="Header">
+        <img src="Icon/logo.jpeg" alt="My logo" class="logo">
+        <div class="navbar">
+            <ul class="navbar">
+                <li><a class="active" href="Index.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Maitho.html">Log In</a></li>
+                <li><a href="Comment.html">Comment section</a></li>
+                <li><i class='ri-shopping-bag-fill' id="cart-icon"></i></li>
+            </ul>
+
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <!--content-->
+                <div class="cart-content">
+                    <div class="cart-box">
+                    </div>
+                </div>
+
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">KSH. 0</div>
+                </div>
+                <!--Buy button-->
+                <button id="buy-button" type="button" class="btn btn-secondary btn-block mb-3">Buy</button>
+                <!--cart close-->
+                <i id="close-cart" class='ri-close-line cart-remove'></i>
+                
+            </div>
+       </div>
+    </section>
+</header>
+
+<section class="shop container">
+    <h2 class="section-title">Shop Products</h2>
+    <!--Content-->
+<div class="shop-content">
+
+    <!--box 1-->
+    <div class="product-box"  data-shoe-name="Air-Max 97" data-shoe-price="4500">
+        <img src="Image/shoe2.jpg.jpeg" alt="">
+        <h2 class="product-title">Air-Max 97</h2>
+        <span class="price">KSH. 4500</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 2-->
+    <div class="product-box" data-shoe-name="jordan 4" data-shoe-price="4500">
+        <img src="Image/jordan 4.jpeg" alt="">
+        <h2 class="product-title">Jordan 4</h2>
+        <span class="price">KSH. 4500</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 3-->
+    <div class="product-box" data-shoe-name="wallabies Limited" data-shoe-price="5000">
+        <img src="Image/wallabies(LD).jpeg" alt="">
+        <h2 class="product-title">wallabies Limited </h2>
+        <span class="price">KSH. 5000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 4-->
+    <div class="product-box" data-shoe-name="wallabies" data-shoe-price="4500">
+        <img src="Image/wallabies.jpeg" alt="">
+        <h2 class="product-title">wallabies</h2>
+        <span class="price">KSH. 4500</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 5-->
+    <div class="product-box">
+        <img src="Image/Lagz.jpeg" alt="" data-shoe-name="Lagz" data-shoe-price="7000">
+        <h2 class="product-title">Lagz</h2>
+        <span class="price">KSH. 7000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 6-->
+    <div class="product-box" data-shoe-name="Timber Sport" data-shoe-price="9000">
+        <img src="Image/timber.jpeg" alt="">
+        <h2 class="product-title">Timber Sport</h2>
+        <span class="price">KSH. 9000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 7-->
+    <div class="product-box" data-shoe-name="Bank-Robbers" data-shoe-price="12000">
+        <img src="Image/bank-robbers(lD).jpeg" alt="">
+        <h2 class="product-title">Bank-Robbers</h2>
+        <span class="price">KSH. 12000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 8-->
+    <div class="product-box" data-shoe-name="Daily" data-shoe-price="3000">
+        <img src="Image/Daily3.0.jpeg" alt="">
+        <h2 class="product-title">Daily</h2>
+        <span class="price">KSH. 3000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 9-->
+    <div class="product-box" data-shoe-name="Bank-Robbers" data-shoe-price="10000">
+        <img src="Image/Bank-robbers.jpeg" alt="">
+        <h2 class="product-title">Bank-Robbers</h2>
+        <span class="price">KSH. 10000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 10-->
+    <div class="product-box" data-shoe-name="Oztral" data-shoe-price="4000">
+        <img src="Image/Oztral Addidas.jpeg" alt="">
+        <h2 class="product-title">Oztral </h2>
+        <span class="price">KSH. 4000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 11-->
+    <div class="product-box" data-shoe-name="Air-force Dynamite" data-shoe-price="5000">
+        <img src="Image/dynamite.jpeg" alt="">
+        <h2 class="product-title">Air-force Dynamite</h2>
+        <span class="price">KSH. 5000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 12-->
+    <div class="product-box" data-shoe-name="wallabies spicy" data-shoe-price="12000">
+        <img src="Image/walaabies 001.jpeg" alt="">
+        <h2 class="product-title">wallabies spicy</h2>
+        <span class="price">KSH. 12000</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+    <!--box 13-->
+    <div class="product-box" data-shoe-name="Adidas X Messi" data-shoe-price="6500">
+        <img src="Image/Adidas X Messi LC.1.jpeg" alt="">
+        <h2 class="product-title">Adidas X Messi</h2>
+        <span class="price">KSH. 6500</span>
+        <i class="ri-shopping-bag-fill add-cart"></i>
+    </div>
+
+</div>
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+        <h4>Sign Up</h4>
+        <p>Get Email updates about our <span>latest special offers.</span></p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="You Email Address">
+        <button>Sign up</button>
+    </div>
+</section>
+
+<footer class="section-p1">
+    <div class="col">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong>69909-00400 Tom Mboya Sreet</p>
+        <p><strong>Phone:</strong>+254721206654</p>
+        <p><strong>Hours:</strong>10.00-20.00,Mon-Sat</p>
+        <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="mso">
+                <i class="ri-facebook-box-fill"></i>
+                <i class="ri-twitter-x-fill"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-youtube-fill"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+    </div>
+
+    <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; KAMOTHO'S ROYALTY</p>
+    </div>
+</footer>
+
+ <!-- Include Bootstrap JS for basic functionality -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+ <!-- Include Firebase libraries -->
+ <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+
+<!-- Your Firebase configuration -->
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyD3eTPxA4APlwYDMt58U6tV6JDQs2ozPWo",
+        authDomain: "msoni-7e6b4.firebaseapp.com",
+        projectId: "msoni-7e6b4",
+        storageBucket: "msoni-7e6b4.appspot.com",
+        messagingSenderId: "23348898563",
+        appId: "1:23348898563:web:69cf32ea42889756801736",
+        measurementId: "G-PQ2ZBSKB4H"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var database = firebase.database();
+
+    // Use jQuery to handle button click
+    $(document).ready(function () {
+        $("#create-newuser-button").click(function () {
+            var email = $("#InputEmail").val();
+            var password = $("#InputPassword").val();
+            console.log("New user=" + email + " " + password);
+            CreatenewUser(email, password);
+        });
+
+        $("#sign-in-button").click(function () {
+            var email = $("#InputEmail").val();
+            var password = $("#InputPassword").val();
+            console.log("Existing user=" + email + " " + password);
+            SignIn(email, password);
+        });
+
+        $("#logout-button").click(function () {
+            // Use firebase.auth().signOut() instead of FirebaseAuth.signOut()
+            firebase.auth().signOut();
+            console.log("logged Out");
+        });
+
+        $("#google-login-button").click(function () {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider)
+                .then((result) => {
+                    // The signed-in user info.
+                    const user = result.user;
+
+                    // Use the user information as needed.
+                    console.log(user);
+                })
+                .catch((error) => {
+                    // Handle Errors here.
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.email;
+
+                    // Use the error information as needed.
+                    console.error(`Google login error: ${errorCode} - ${errorMessage} (${email})`);
+                });
+        });
+
+    });
+    
+
+    function CreatenewUser(email, password) {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed in
+                var user = userCredential.user;
+                writeUserData(user);
+                redirectToIndexPage()
+            })
+            .catch((error) => {
+                console.error("Error creating new user:", error);
+            });
+    }
+
+    function writeUserData(user) {
+        firebase.database().ref('users/' + user.uid).set({
+            email: user.email
+        });
+    }
+
+    function SignIn(email, password) {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed in
+                var user = userCredential.user;
+                writeUserData(user);
+                redirectToIndexPage()
+            })
+            .catch((error) => {
+                console.error("Error signing in:", error);
+            });
+    }
+    function redirectToIndexPage() {
+        // Redirect to your Index.html page
+        window.location.href = 'Index.html';
+    }
+
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            var email = user.email;
+            currentUser = user;
+            console.log(currentUser.email + " has logged in");
+        } else {
+            // User is signed out
+            // ...
+        }
+    });
+
+    $(".product-box").click(function () {
+    // Assuming currentUser is defined elsewhere in your code
+    var shoeName = $(this).data("shoe-name");
+    var shoePrice = $(this).data("shoe-price");
+    var shoeSize = prompt("Enter the shoe size:");
+
+    // Check if all necessary information is available
+    if (shoeName && shoePrice && currentUser && shoeSize) {
+        var shoeData = {
+            name: shoeName,
+            price: shoePrice,
+            size: shoeSize
+        };
+
+        // Reference to the cart in the Firebase Realtime Database
+        var cartRef = firebase.database().ref('users/' + currentUser.uid + '/cart');
+
+        // Add the shoe data to the cart
+        cartRef.push(shoeData)
+            .then(() => {
+                console.log("Shoe added to cart successfully");
+            })
+            .catch((error) => {
+                console.error("Error adding shoe to cart:", error);
+            });
+    } else {
+        console.log("Invalid shoe information or user not logged in.");
+    }
+});
+
+
+    
+
+</script>
+
+<script src="main.js"></script>
+
+</body>
+</html>

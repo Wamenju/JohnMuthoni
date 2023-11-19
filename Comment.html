@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css" class="css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <section id="Header">
+            <img src="Icon/logo.jpeg" alt="My logo" class="logo">
+            <div class="navbar">
+                <ul class="navbar">
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Shop.html">Shop</a></li>
+                    <li><a href="Maitho.html">Log In</a></li>
+                    <li><a class="active"href="Comment.html">Comment section</a></li>
+                    <li><i class='ri-shopping-bag-fill' id="cart-icon"></i></li>
+                </ul>
+
+                <div class="cart">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <!--content-->
+                    <div class="cart-content">
+                        <div class="cart-box">
+                        </div>
+                    </div>
+
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">KSH. 0</div>
+                    </div>
+                    <!--Buy button-->
+                    <button id="buy-button" type="button" class="btn btn-secondary btn-block mb-3">Buy</button>
+                    <!--cart close-->
+                    <i id="close-cart" class='ri-close-line cart-remove'></i>
+                    
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <form id="commentForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up</h4>
+            <p>Get Email updates about our <span>latest special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="You Email Address">
+            <button>Sign up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>69909-00400 Tom Mboya Sreet</p>
+            <p><strong>Phone:</strong>+254721206654</p>
+            <p><strong>Hours:</strong>10.00-20.00,Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="mso">
+                    <i class="ri-facebook-box-fill"></i>
+                    <i class="ri-twitter-x-fill"></i>
+                    <i class="ri-instagram-line"></i>
+                    <i class="ri-youtube-fill"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; KAMOTHO'S ROYALTY</p>
+        </div>
+    </footer>
+
+     <!-- Include Bootstrap JS for basic functionality -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     
+     <!-- Include Firebase libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+    <!-- Your Firebase configuration -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD3eTPxA4APlwYDMt58U6tV6JDQs2ozPWo",
+            authDomain: "msoni-7e6b4.firebaseapp.com",
+            projectId: "msoni-7e6b4",
+            storageBucket: "msoni-7e6b4.appspot.com",
+            messagingSenderId: "23348898563",
+            appId: "1:23348898563:web:69cf32ea42889756801736",
+            measurementId: "G-PQ2ZBSKB4H"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Use jQuery to handle button click
+        $(document).ready(function () {
+            // Function to create a new user
+            function CreatenewUser(email, password) {
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        // Signed in
+                        var user = userCredential.user;
+                        writeUserData(user);
+                        redirectToIndexPage()
+                    })
+                    .catch((error) => {
+                        console.error("Error creating new user:", error);
+                    });
+            }
+
+            // Function to write user data to the database
+            function writeUserData(user) {
+                firebase.database().ref('users/' + user.uid).set({
+                    email: user.email
+                });
+            }
+
+            // Function to sign in an existing user
+            function SignIn(email, password) {
+                firebase.auth().signInWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        // Signed in
+                        var user = userCredential.user;
+                        writeUserData(user);
+                        // Check if the comment form is submitted after signing in
+                        checkCommentSubmission(user);
+                    })
+                    .catch((error) => {
+                        console.error("Error signing in:", error);
+                    });
+            }
+
+            // Function to redirect to the index page
+            function redirectToIndexPage() {
+                // Redirect to your Index.html page
+                window.location.href = 'Index.html';
+            }
+
+            // Function to handle form submission
+            $("#commentForm").submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                var email = $("#email").val();
+                var password = "dummy_password"; // Set a dummy password
+
+                // Check if the user is already signed in
+                var user = firebase.auth().currentUser;
+                if (user) {
+                    // User is already signed in, proceed to submit comment
+                    submitComment(user);
+                } else {
+                    // User is not signed in, sign in or create a new user
+                    SignIn(email, password);
+                }
+            });
+
+            // Function to check if the comment form is submitted after signing in
+            function checkCommentSubmission(user) {
+                var commentFormSubmitted = localStorage.getItem('commentFormSubmitted');
+                if (commentFormSubmitted) {
+                    // The comment form was submitted, submit the comment
+                    submitComment(user);
+                    // Clear the flag
+                    localStorage.removeItem('commentFormSubmitted');
+                }
+            }
+
+            // Function to submit the comment
+            function submitComment(user) {
+                // Get the comment data
+                var commentData = {
+                    name: $("#name").val(),
+                    email: $("#email").val(),
+                    comment: $("#comment").val(),
+                    uid: user.uid // Add the UID to the comment data
+                };
+
+                // Reference to the comments in the Firebase Realtime Database
+                var commentsRef = firebase.database().ref('comments');
+
+                // Add the comment data to the comments
+                commentsRef.push(commentData)
+                    .then(() => {
+                        console.log("Comment added successfully");
+                    })
+                    .catch((error) => {
+                        console.error("Error adding comment:", error);
+                    });
+            }
+
+            // ... (rest of the code)
+
+        });
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>
