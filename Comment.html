@@ -206,16 +206,24 @@
 
             // Add the comment data to the comments
             commentsRef.push(commentData)
-                .then(() => {
-                    console.log("Comment added successfully");
-                })
-                .catch((error) => {
-                    console.error("Error adding comment:", error);
-                });
+        .then(() => {
+            console.log("Comment added successfully");
+            // Display an alert after successfully adding a comment
+            alert("Thanks for your honesty! Your comment has been submitted.");
+            clearForm();
+        })
+        .catch((error) => {
+            console.error("Error adding comment:", error);
+        });
         }
 
 
     });
+    function clearForm() {
+    $("#name").val('');
+    $("#comment").val('');
+    // Add additional form fields if needed
+}
     
 
     function CreatenewUser(email, password) {
